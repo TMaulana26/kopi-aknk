@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -15,6 +16,7 @@ import {
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -35,35 +37,41 @@ const specials: SpecialItem[] = [
     id: 'kawung',
     price: 'Rp14.000',
     tags: ['COFFEE', 'TRADITIONAL'],
-    image: '/Kopi AKNK AI product 04 (Kopi Gula Kawung).png'
+    image: 'product-04.png'
   },
   {
     id: 'americano',
     price: 'Rp14.000',
     tags: ['COFFEE', 'BOLD'],
-    image: '/Kopi AKNK AI product 06 (Kopi Americano).png'
+    image: 'product-06.png'
   },
   {
     id: 'avocado',
     price: 'Rp14.000',
     tags: ['COFFEE', 'FRUIT'],
-    image: '/Kopi AKNK AI product 07 (Kopi Avocado).png'
+    image: 'product-07.png'
   },
   {
     id: 'karamel',
     price: 'Rp14.000',
     tags: ['COFFEE', 'SWEET'],
-    image: '/Kopi AKNK AI product 08 (Kopi Karamel).png'
+    image: 'product-08.png'
   },
   {
     id: 'spanish',
     price: 'Rp14.000',
     tags: ['COFFEE', 'LATTE'],
-    image: '/Kopi AKNK AI product 09 (Kopi Spanish Latte).png'
+    image: 'product-09.png'
   }
 ]
 
-const categories = ['Espresso', 'Milk Based', 'Manual Brew']
+const categories = computed(() => {
+  const cats = new Set<string>()
+  specials.forEach(item => {
+    cats.add(t(`specials.items.${item.id}.category`))
+  })
+  return Array.from(cats)
+})
 
 const getWhatsappUrl = (item: SpecialItem) => {
   const phoneNumber = '6281234567890'
@@ -104,6 +112,9 @@ const getItemsByCategory = (category: string) => {
                 <MoreHorizontal class="text-primary" />
                 {{ t('nav.specials') }}
               </DialogTitle>
+              <DialogDescription class="text-white/60">
+                {{ t('specials.description') }}
+              </DialogDescription>
             </DialogHeader>
             <ScrollArea class="h-[calc(90vh-100px)] p-4 md:p-8">
               <div class="space-y-12">
@@ -113,7 +124,7 @@ const getItemsByCategory = (category: string) => {
                     <div v-for="item in getItemsByCategory(category)" :key="item.id"
                       class="flex items-center gap-4 md:gap-6 p-4 md:p-6 rounded-2xl md:rounded-3xl bg-white/5 border border-white/5 hover:border-primary/20 transition-all group">
                       <div class="w-20 h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl overflow-hidden shrink-0">
-                        <img :src="item.image" :alt="t(`specials.items.${item.id}.title`)"
+                        <img :src="`./${item.image}`" :alt="t(`specials.items.${item.id}.title`)"
                           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                       </div>
                       <div class="flex-1 min-w-0">
@@ -150,7 +161,7 @@ const getItemsByCategory = (category: string) => {
               class="bg-black/20 border-white/5 overflow-hidden group/card hover:border-primary/30 transition-all duration-500 hover:-translate-y-2">
               <CardHeader class="p-0">
                 <AspectRatio :ratio="1">
-                  <img :src="item.image" :alt="t(`specials.items.${item.id}.title`)"
+                  <img :src="`./${item.image}`" :alt="t(`specials.items.${item.id}.title`)"
                     class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700" />
                 </AspectRatio>
               </CardHeader>
