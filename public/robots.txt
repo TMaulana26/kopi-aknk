@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kopiaknk.com/sitemap.xml
+Sitemap: https://kopiaknk.my.id/sitemap.xml
