@@ -9,7 +9,7 @@ import TheFooter from '@/components/TheFooter.vue'
 </script>
 
 <template>
-  <div class="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 overflow-x-hidden">
+  <div class="min-h-screen dark bg-background text-foreground font-sans selection:bg-primary/30 overflow-x-hidden">
     <TheNavbar />
 
     <main>

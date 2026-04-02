@@ -16,9 +16,8 @@ const whatsappUrl = computed(() => {
 <template>
   <footer class="pt-20 md:pt-32 pb-12 relative overflow-hidden" id="order">
     <!-- Dark overlay with small image pattern -->
-    <div class="absolute inset-0 z-0 opacity-10 grayscale">
-      <img src="https://placehold.co/1920x800/111111/444444?text=Coffee+Drip+Pattern" alt="Footer Background"
-        class="w-full h-full object-cover" />
+    <div class="absolute inset-0 z-0 opacity-40 grayscale">
+      <img src="/product-10.webp" alt="Footer Background" class="w-full h-full object-cover" />
     </div>
 
     <div class="container mx-auto px-6 relative z-10">
@@ -32,20 +31,16 @@ const whatsappUrl = computed(() => {
           {{ $t('footer.description') }}
         </p>
         <div class="pt-4 drop-shadow-2xl">
-          <Button 
-            as="a"
-            :href="whatsappUrl"
-            target="_blank"
-            size="xl" 
-            class="h-16 md:h-20 rounded-full px-8 md:px-12 text-sm md:text-base uppercase tracking-[0.2em] font-bold shadow-2xl hover:scale-105 transition-all bg-[#25D366] hover:bg-[#20bd5a] text-white"
-          >
+          <Button as="a" :href="whatsappUrl" target="_blank" size="xl"
+            class="h-16 md:h-20 rounded-full px-8 md:px-12 text-sm md:text-base uppercase tracking-[0.2em] font-bold shadow-2xl hover:scale-105 transition-all bg-[#25D366] hover:bg-[#20bd5a] text-white">
             <MessageCircle class="w-5 h-5 md:w-6 md:h-6 mr-2" />
             {{ $t('footer.whatsapp') }}
           </Button>
         </div>
       </div>
 
-      <div class="mt-20 md:mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div
+        class="mt-20 md:mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
         <div class="space-y-4 text-center md:text-left">
           <p class="text-2xl font-serif font-bold">KOPI AKNK</p>
           <p class="text-muted-foreground text-sm flex items-center justify-center md:justify-start gap-2">

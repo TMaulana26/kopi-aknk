@@ -70,27 +70,30 @@ onUnmounted(() => {
         </div>
         <span class="text-xl font-serif font-bold tracking-tight">KOPI AKNK</span>
       </div>
-      <div
-        class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest leading-none">
-        <a href="#hero" 
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest leading-none">
+        <a href="#hero"
           :class="['transition-all duration-300 relative py-2', activeSection === 'hero' ? 'text-primary' : 'text-muted-foreground hover:text-foreground']">
           {{ $t('nav.home') }}
-          <span v-if="activeSection === 'hero'" class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full blur-[1px]"></span>
+          <span v-if="activeSection === 'hero'"
+            class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full blur-[1px]"></span>
         </a>
-        <a href="#specials" 
+        <a href="#specials"
           :class="['transition-all duration-300 relative py-2', activeSection === 'specials' ? 'text-primary' : 'text-muted-foreground hover:text-foreground']">
           {{ $t('nav.specials') }}
-          <span v-if="activeSection === 'specials'" class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full blur-[1px]"></span>
+          <span v-if="activeSection === 'specials'"
+            class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full blur-[1px]"></span>
         </a>
-        <a href="#about" 
+        <a href="#about"
           :class="['transition-all duration-300 relative py-2', activeSection === 'about' ? 'text-primary' : 'text-muted-foreground hover:text-foreground']">
           {{ $t('nav.about') }}
-          <span v-if="activeSection === 'about'" class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full blur-[1px]"></span>
+          <span v-if="activeSection === 'about'"
+            class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full blur-[1px]"></span>
         </a>
-        <a href="#testimonials" 
+        <a href="#testimonials"
           :class="['transition-all duration-300 relative py-2', activeSection === 'testimonials' ? 'text-primary' : 'text-muted-foreground hover:text-foreground']">
           {{ $t('nav.testimonials') }}
-          <span v-if="activeSection === 'testimonials'" class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full blur-[1px]"></span>
+          <span v-if="activeSection === 'testimonials'"
+            class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full blur-[1px]"></span>
         </a>
       </div>
       <div class="flex items-center gap-2">
@@ -108,39 +111,35 @@ onUnmounted(() => {
         </Button>
       </div>
 
-      <!-- Mobile Menu Overlay -->
-      <Transition
-        enter-active-class="transition duration-300 ease-out"
-        enter-from-class="opacity-0 translate-y-[-10px]"
-        enter-to-class="opacity-100 translate-y-0"
-        leave-active-class="transition duration-200 ease-in"
-        leave-from-class="opacity-100 translate-y-0"
-        leave-to-class="opacity-0 translate-y-[-10px]"
-      >
-        <div v-if="isMenuOpen" class="fixed inset-0 top-20 bg-background/95 backdrop-blur-3xl z-40 md:hidden flex flex-col p-8 space-y-8 text-2xl font-serif">
-          <a href="#hero" @click="closeMenu"
-            :class="[activeSection === 'hero' ? 'text-primary' : 'text-muted-foreground']">
-            {{ $t('nav.home') }}
-          </a>
-          <a href="#specials" @click="closeMenu"
-            :class="[activeSection === 'specials' ? 'text-primary' : 'text-muted-foreground']">
-            {{ $t('nav.specials') }}
-          </a>
-          <a href="#about" @click="closeMenu"
-            :class="[activeSection === 'about' ? 'text-primary' : 'text-muted-foreground']">
-            {{ $t('nav.about') }}
-          </a>
-          <a href="#testimonials" @click="closeMenu"
-            :class="[activeSection === 'testimonials' ? 'text-primary' : 'text-muted-foreground']">
-            {{ $t('nav.testimonials') }}
-          </a>
-          <div class="pt-8 mt-auto border-t border-white/10">
-            <Button variant="outline" size="xl" class="w-full uppercase tracking-widest font-black" @click="closeMenu">
-              <a href="#order" class="w-full text-center">{{ $t('nav.order') }}</a>
-            </Button>
-          </div>
-        </div>
-      </Transition>
     </div>
+    <!-- Mobile Menu Overlay -->
+    <Transition enter-active-class="transition duration-300 ease-out" enter-from-class="opacity-0 translate-y-[-10px]"
+      enter-to-class="opacity-100 translate-y-0" leave-active-class="transition duration-200 ease-in"
+      leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-[-10px]">
+      <div v-if="isMenuOpen"
+        class="fixed top-20 left-0 right-0 bottom-0 h-[calc(100vh-5rem)] bg-black z-999 md:hidden flex flex-col p-8 space-y-8 text-2xl font-serif overflow-y-auto">
+        <a href="#hero" @click="closeMenu"
+          :class="[activeSection === 'hero' ? 'text-primary' : 'text-muted-foreground']">
+          {{ $t('nav.home') }}
+        </a>
+        <a href="#specials" @click="closeMenu"
+          :class="[activeSection === 'specials' ? 'text-primary' : 'text-muted-foreground']">
+          {{ $t('nav.specials') }}
+        </a>
+        <a href="#about" @click="closeMenu"
+          :class="[activeSection === 'about' ? 'text-primary' : 'text-muted-foreground']">
+          {{ $t('nav.about') }}
+        </a>
+        <a href="#testimonials" @click="closeMenu"
+          :class="[activeSection === 'testimonials' ? 'text-primary' : 'text-muted-foreground']">
+          {{ $t('nav.testimonials') }}
+        </a>
+        <div class="pt-8 mt-auto border-t border-white/10">
+          <Button variant="outline" size="xl" class="w-full uppercase tracking-widest font-black" @click="closeMenu">
+            <a href="#order" class="w-full text-center">{{ $t('nav.order') }}</a>
+          </Button>
+        </div>
+      </div>
+    </Transition>
   </nav>
 </template>
