@@ -17,7 +17,7 @@ const whatsappUrl = computed(() => {
   <footer class="pt-20 md:pt-32 pb-12 relative overflow-hidden" id="order">
     <!-- Dark overlay with small image pattern -->
     <div class="absolute inset-0 z-0 opacity-40 grayscale">
-      <img src="/product-10.webp" alt="Footer Background" class="w-full h-full object-cover" />
+      <img src="/product-10.webp" alt="Kopi AKNK Coffee Drip Pattern Background" class="w-full h-full object-cover" />
     </div>
 
     <div class="container mx-auto px-6 relative z-10">

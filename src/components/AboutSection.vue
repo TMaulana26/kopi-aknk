@@ -40,7 +40,7 @@ import { Clock } from 'lucide-vue-next'
         <div class="lg:col-span-7 relative order-1 lg:order-2">
           <div class="absolute -inset-4 bg-primary/10 blur-3xl rounded-[40px] opacity-20"></div>
           <AspectRatio :ratio="4 / 5" class="rounded-[40px] overflow-hidden border border-white/10 shadow-3xl">
-            <img src="/product-02.webp" alt="Coffee Atmosphere" class="w-full h-full object-cover" />
+            <img src="/product-02.webp" alt="Kopi AKNK Atmosphere - Artisanal Coffee Brewing" class="w-full h-full object-cover" />
           </AspectRatio>
           <!-- Floating element -->
           <div

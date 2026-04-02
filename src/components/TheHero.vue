@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-vue-next'
   <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#0A0A0B]">
     <!-- Background Image Layer -->
     <div class="absolute inset-0 z-0">
-      <img src="/product-03.webp" alt="Background"
+      <img src="/product-03.webp" alt="Kopi AKNK Hero - Freshly Roasted Coffee Cup"
         class="w-full h-full object-cover object-center scale-105 opacity-70" />
       <!-- Dimming Overlay: Radial and Linear gradients for a premium feel -->
       <div class="absolute inset-0 bg-linear-to-r from-[#0A0A0B] via-[#0A0A0B]/60 to-transparent z-10"></div>

@@ -21,6 +21,7 @@ const toggleLanguage = () => {
   locale.value = locale.value === 'en' ? 'id' : 'en'
   if (typeof window !== 'undefined') {
     localStorage.setItem('locale', locale.value)
+    document.documentElement.lang = locale.value
   }
 }
 
