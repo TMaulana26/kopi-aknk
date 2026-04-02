@@ -37,31 +37,31 @@ const specials: SpecialItem[] = [
     id: 'kawung',
     price: 'Rp14.000',
     tags: ['COFFEE', 'TRADITIONAL'],
-    image: 'product-04.png'
+    image: 'product-04.webp'
   },
   {
     id: 'americano',
     price: 'Rp14.000',
     tags: ['COFFEE', 'BOLD'],
-    image: 'product-06.png'
+    image: 'product-06.webp'
   },
   {
     id: 'avocado',
     price: 'Rp14.000',
     tags: ['COFFEE', 'FRUIT'],
-    image: 'product-07.png'
+    image: 'product-07.webp'
   },
   {
     id: 'karamel',
     price: 'Rp14.000',
     tags: ['COFFEE', 'SWEET'],
-    image: 'product-08.png'
+    image: 'product-08.webp'
   },
   {
     id: 'spanish',
     price: 'Rp14.000',
     tags: ['COFFEE', 'LATTE'],
-    image: 'product-09.png'
+    image: 'product-09.webp'
   }
 ]
 
@@ -124,7 +124,7 @@ const getItemsByCategory = (category: string) => {
                     <div v-for="item in getItemsByCategory(category)" :key="item.id"
                       class="flex items-center gap-4 md:gap-6 p-4 md:p-6 rounded-2xl md:rounded-3xl bg-white/5 border border-white/5 hover:border-primary/20 transition-all group">
                       <div class="w-20 h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl overflow-hidden shrink-0">
-                        <img :src="`./${item.image}`" :alt="t(`specials.items.${item.id}.title`)"
+                        <img :src="`/${item.image}`" :alt="t(`specials.items.${item.id}.title`)"
                           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                       </div>
                       <div class="flex-1 min-w-0">
@@ -132,7 +132,8 @@ const getItemsByCategory = (category: string) => {
                           <h4 class="font-serif text-lg md:text-xl">{{ t(`specials.items.${item.id}.title`) }}</h4>
                           <span class="text-primary font-bold text-sm md:text-base">{{ item.price }}</span>
                         </div>
-                        <p class="text-sm md:text-base text-muted-foreground mt-1">{{ t(`specials.items.${item.id}.description`) }}
+                        <p class="text-sm md:text-base text-muted-foreground mt-1">{{
+                          t(`specials.items.${item.id}.description`) }}
                         </p>
                         <a :href="getWhatsappUrl(item)" target="_blank"
                           class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-widest text-primary mt-2 group-hover:underline">
@@ -161,7 +162,7 @@ const getItemsByCategory = (category: string) => {
               class="bg-black/20 border-white/5 overflow-hidden group/card hover:border-primary/30 transition-all duration-500 hover:-translate-y-2">
               <CardHeader class="p-0">
                 <AspectRatio :ratio="1">
-                  <img :src="`./${item.image}`" :alt="t(`specials.items.${item.id}.title`)"
+                  <img :src="`/${item.image}`" :alt="t(`specials.items.${item.id}.title`)"
                     class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700" />
                 </AspectRatio>
               </CardHeader>
@@ -171,7 +172,8 @@ const getItemsByCategory = (category: string) => {
                     class="bg-white/5 border-white/5 text-[10px] tracking-widest font-bold">{{ tag }}</Badge>
                 </div>
                 <div class="flex justify-between items-baseline gap-2">
-                  <CardTitle class="text-xl md:text-2xl font-serif">{{ t(`specials.items.${item.id}.title`) }}</CardTitle>
+                  <CardTitle class="text-xl md:text-2xl font-serif">{{ t(`specials.items.${item.id}.title`) }}
+                  </CardTitle>
                   <span class="text-lg md:text-xl font-bold text-primary">{{ item.price }}</span>
                 </div>
                 <CardDescription class="text-sm md:text-base text-muted-foreground leading-relaxed h-12 line-clamp-2">

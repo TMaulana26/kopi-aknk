@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-vue-next'
   <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#0A0A0B]">
     <!-- Background Image Layer -->
     <div class="absolute inset-0 z-0">
-      <img src="/product-03.png" alt="Background"
+      <img src="/product-03.webp" alt="Background"
         class="w-full h-full object-cover object-center scale-105 opacity-70" />
       <!-- Dimming Overlay: Radial and Linear gradients for a premium feel -->
       <div class="absolute inset-0 bg-linear-to-r from-[#0A0A0B] via-[#0A0A0B]/60 to-transparent z-10"></div>
@@ -16,10 +16,12 @@ import { ArrowRight } from 'lucide-vue-next'
 
     <div class="container mx-auto px-6 relative z-20">
       <div class="max-w-3xl space-y-6 md:space-y-8 animate-in fade-in slide-in-from-left-12 duration-1000">
-        <p class="text-[10px] md:text-sm font-bold tracking-[0.3em] md:tracking-[0.4em] text-muted-foreground uppercase opacity-80">
+        <p
+          class="text-[10px] md:text-sm font-bold tracking-[0.3em] md:tracking-[0.4em] text-muted-foreground uppercase opacity-80">
           {{ $t('hero.subtitle') }}
         </p>
-        <h1 class="text-4xl sm:text-6xl md:text-8xl font-serif font-medium leading-[1.1] md:leading-[1.05] tracking-tight text-white">
+        <h1
+          class="text-4xl sm:text-6xl md:text-8xl font-serif font-medium leading-[1.1] md:leading-[1.05] tracking-tight text-white">
           {{ $t('hero.title1') }}<br />
           <span class="text-muted-foreground italic font-light tracking-normal">{{ $t('hero.title2') }}</span>
         </h1>
